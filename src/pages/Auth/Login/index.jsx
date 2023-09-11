@@ -1,19 +1,33 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-import styled from 'styled-components/native';
+import { Background } from './styles/style'
 
 export default function Login(){
     return(
-        <Container>
-            <Text>TELA LOGIN</Text>
-        </Container>
+        <Background>
+            <Container>
+                <Logo
+                    source={require('../../../assets/Logo.png')}                
+                />
+
+                <AreaInput>
+                    <Input
+                        placeholder="Seu email"
+                    />
+                </AreaInput>
+
+                <AreaInput>
+                    <Input
+                        placeholder="Sua senha"
+                    />
+                </AreaInput>
+
+                <SubmitButton>
+                    <SubmitText>Entrar</SubmitText>
+                </SubmitButton>
+
+            </Container>
+        </Background>
     )
 }
-
-const Container = styled.View`
-    flex: 1;
-    background-color: '#0040ff';
-    align-items: 'center';
-    justify-content: 'center';
-`
