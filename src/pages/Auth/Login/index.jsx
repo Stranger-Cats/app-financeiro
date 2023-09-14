@@ -1,12 +1,27 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Platform } from "react-native";
 
-import { Background } from './styles/style'
+import { 
+    Background, 
+    Container, 
+    Logo, 
+    AreaInput, 
+    Input, 
+    SubmitButton, 
+    SubmitText
+} from './styles/style'
+
+import { useNavigation } from "@react-navigation/native";
 
 export default function Login(){
+    const navigation = useNavigation();
+
     return(
         <Background>
-            <Container>
+            <Container 
+                behavior={Platform.OS === 'ios' ? 'padding' : ''}
+                enabled
+            >
                 <Logo
                     source={require('../../../assets/Logo.png')}                
                 />
