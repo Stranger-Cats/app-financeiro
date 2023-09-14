@@ -47,3 +47,13 @@ export const SubmitText = styled.Text`
     font-size: 16px;
     color: #f9fafc;
 `;
+
+export const Link = styled.TouchableOpacity`
+    margin-top: 10px;
+    margin-bottom: 10px;
+`
+
+export const LinkText = styled.Text`
+    margin-top: 10px;
+    margin-bottom: 10px;
+`;

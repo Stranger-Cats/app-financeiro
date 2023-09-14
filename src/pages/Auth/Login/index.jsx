@@ -8,7 +8,9 @@ import {
     AreaInput, 
     Input, 
     SubmitButton, 
-    SubmitText
+    SubmitText,
+    Link,
+    LinkText
 } from './styles/style'
 
 import { useNavigation } from "@react-navigation/native";
@@ -41,6 +43,10 @@ export default function Login(){
                 <SubmitButton>
                     <SubmitText>Entrar</SubmitText>
                 </SubmitButton>
+
+                <Link onPress={() => navigation.navigate('Cadastro')}>
+                    <LinkText>Criar uma conta!</LinkText>
+                </Link>
 
             </Container>
         </Background>
