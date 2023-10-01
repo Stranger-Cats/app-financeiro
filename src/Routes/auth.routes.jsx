@@ -6,8 +6,8 @@ import Cadastro from "../pages/Auth/Cadastro";
 
 const AuthStack = createNativeStackNavigator();
 
-export default function AuthRoutes(){
-    return(
+export default function AuthRoutes() {
+    return (
         <AuthStack.Navigator>
             <AuthStack.Screen
                 name="Login"
@@ -17,10 +17,7 @@ export default function AuthRoutes(){
                 }}
             />
 
-            <AuthStack.Screen
-                name="Cadastro"
-                component={Cadastro}
-            />
+            <AuthStack.Screen name="Cadastro" component={Cadastro} />
         </AuthStack.Navigator>
-    )
+    );
 }
