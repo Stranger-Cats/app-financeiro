@@ -1,19 +1,44 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Platform } from "react-native";
 
 import styled from "styled-components/native";
 
+import { AreaText } from "./styles/style";
+
+import {
+    Background,
+    Container,
+    AreaInput,
+    Input,
+    SubmitButton,
+    SubmitText,
+} from "../Login/styles/style";
+
 export default function Cadastro() {
     return (
-        <Container>
-            <Text>TELA CADASTRO</Text>
-        </Container>
+        <Background>
+            <Container
+                behavior={Platform.OS === "ios" ? "padding" : ""}
+                enabled
+            >
+                <AreaText>Register</AreaText>
+
+                <AreaInput>
+                    <Input placeholder="Email"></Input>
+                </AreaInput>
+
+                <AreaInput>
+                    <Input placeholder="Senha"></Input>
+                </AreaInput>
+
+                <AreaInput>
+                    <Input placeholder="Confirmar senha"></Input>
+                </AreaInput>
+
+                <SubmitButton>
+                    <SubmitText>Cadastrar</SubmitText>
+                </SubmitButton>
+            </Container>
+        </Background>
     );
 }
-
-const Container = styled.View`
-    flex: 1;
-    background-color: "#ff0000";
-    align-items: "center";
-    justify-content: "center";
-`;
