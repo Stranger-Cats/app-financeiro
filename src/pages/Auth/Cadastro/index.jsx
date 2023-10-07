@@ -21,6 +21,7 @@ export default function Cadastro() {
     const [password, setPassword] = useState("");
 
     function handleSingUp() {
+        if (nome === "" || email === "" || password === "") return;
         signUp(nome, email, password);
     }
 
