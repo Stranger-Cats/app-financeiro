@@ -1,7 +1,5 @@
 import React, { useContext, useState } from "react";
-import { View, Text, Platform } from "react-native";
-
-import styled from "styled-components/native";
+import { Platform, ActivityIndicator } from "react-native";
 
 import { AreaText } from "./styles/style";
 
@@ -17,7 +15,7 @@ import {
 } from "../Login/styles/style";
 
 export default function Cadastro() {
-    const { signUp } = useContext(AuthContext);
+    const { signUp, loadingAuth } = useContext(AuthContext);
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -60,7 +58,11 @@ export default function Cadastro() {
                 </AreaInput>
 
                 <SubmitButton onPress={handleSingUp}>
-                    <SubmitText>Cadastrar</SubmitText>
+                    {loadingAuth ? (
+                        <ActivityIndicator size={20} color={"#fff"} />
+                    ) : (
+                        <SubmitText>Cadastrar</SubmitText>
+                    )}
                 </SubmitButton>
             </Container>
         </Background>
