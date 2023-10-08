@@ -11,13 +11,13 @@ function AuthProvider({ children }) {
 
     const navigation = useNavigation();
 
-    async function signUp(email, password, nome) {
+    async function signUp(nome, email, password) {
         setLoadingAuth(true);
         try {
             const response = await api.post("/users", {
                 name: nome,
-                password: password,
                 email: email,
+                password: password,
             });
             setLoadingAuth(false);
             navigation.goBack();
@@ -27,8 +27,42 @@ function AuthProvider({ children }) {
         }
     }
 
+    async function signIn(email, password) {
+        setLoadingAuth(true);
+
+        try {
+            const response = await api.post("/login", {
+                email: email,
+                password: password,
+            });
+
+            const { id, name, token } = response.data;
+
+            const data = {
+                id,
+                name,
+                token,
+                email,
+            };
+
+            api.defaults.headers["Authorization"] = `Bearer ${token}`;
+
+            setUser({
+                id,
+                name,
+                email,
+            });
+            setLoadingAuth(false);
+        } catch (error) {
+            console.log("Erro login", error);
+            setLoadingAuth(false);
+        }
+    }
+
     return (
-        <AuthContext.Provider value={{ user, signUp, loadingAuth }}>
+        <AuthContext.Provider
+            value={{ signed: !!user, user, signUp, signIn, loadingAuth }}
+        >
             {children}
         </AuthContext.Provider>
     );
