@@ -1,16 +1,15 @@
-import styled from 'styled-components/native';
-import { COLORS } from '../../../../theme/index';
+import styled from "styled-components/native";
 
 export const Background = styled.View`
     flex: 1;
-    background-color: #F0F4FF;
+    background-color: #f0f4ff;
 `;
 
 export const Container = styled.KeyboardAvoidingView`
     flex: 1;
     align-items: center;
     justify-content: center;
-`; 
+`;
 
 export const Logo = styled.Image`
     height: 135px;
@@ -26,7 +25,7 @@ export const Input = styled.TextInput`
     background-color: #f9fafc;
     width: 90%;
     font-size: 16px;
-    padding: 17px;
+    padding: 9px 17px;
     border-radius: 5px;
     border: solid 1px #101010;
     color: #101010;
@@ -51,7 +50,7 @@ export const SubmitText = styled.Text`
 export const Link = styled.TouchableOpacity`
     margin-top: 10px;
     margin-bottom: 10px;
-`
+`;
 
 export const LinkText = styled.Text`
     margin-top: 10px;
