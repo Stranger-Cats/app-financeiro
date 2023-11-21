@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "762497653308",
+    "project_id": "app-financeiro-91c46",
+    "storage_bucket": "app-financeiro-91c46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762497653308:android:1e8e5443d33d81c2698139",
+        "android_client_info": {
+          "package_name": "com.douglastark.appFinanceiro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT12BA4izmiUdqDGww1JXwcJyAf5vGL54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

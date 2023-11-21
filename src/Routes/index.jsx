@@ -10,5 +10,6 @@ export default function Routes() {
     const { signed } = useContext(AuthContext);
     const loading = false;
 
-    return signed ? <AppRoutes /> : <AuthRoutes />;
+    // return signed ? <AppRoutes /> : <AuthRoutes />;
+    return <AppRoutes />;
 }
